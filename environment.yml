@@ -1,0 +1,55 @@
+# AI SCI 290A course environment
+#
+# Create:   conda env create -f environment.yml
+# Activate: conda activate 290A
+# Update:   conda env update -f environment.yml --prune
+#
+# Works with Miniforge (recommended), Miniconda, or Anaconda on
+# macOS (Intel and Apple Silicon), Windows, and Linux.
+
+name: 290A
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+
+  # Core scientific stack
+  - numpy
+  - pandas
+  - matplotlib
+  - scipy
+  - scikit-learn
+
+  # Notebooks
+  - jupyterlab
+  - ipykernel
+
+  # Deep learning (CPU builds; fine for this course)
+  - pytorch
+  - torchvision
+
+  # Weather project
+  - xarray
+  - netcdf4
+  - dask
+  - bottleneck
+
+  # Exoplanets project
+  - astropy
+  - lightkurve
+  - numba
+  - llvmlite
+
+  # Materials project (needs a Materials Project API key; keep it in .env)
+  - pymatgen
+  - matminer
+  - mp-api
+  - python-dotenv
+
+  # Version control tools (helpful on Windows; `gh auth login` handles GitHub sign-in)
+  - git
+  - gh
+
+  - pip
+  - pip:
+      - wotan   # light-curve detrending (Exoplanets)
